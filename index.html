@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>My App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/3.1.1/css/framework7.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@4.3.0/dist/css/ionicons.min.css">
+		<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="statusbar"></div>
+      <div class="view view-main">
+        <div data-name="index" class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Awesome App</div>
+            </div>
+          </div>
+          <div class="toolbar messagebar">
+            <div class="toolbar-inner">
+              <a id="attachments" class="link toggle-sheet" href="#">
+                <i class="icon ion-ios-attach ios-only"></i>
+                <i class="icon ion-md-attach md-only"></i>
+              </a>
+              <div class="messagebar-area">
+                <div class="messagebar-attachments"></div>
+
+                <textarea placeholder="Message"></textarea>
+              </div>
+              <a id="send-btn" class="link" href="#">
+                <i class="icon ion-ios-send ios-only"></i>
+                <i class="icon ion-md-send md-only"></i>
+              </a>
+            </div>
+            <div class="messagebar-sheet"></div>
+         </div>
+
+          <div class="page-content messages-content">
+            <div class="messages">
+              <!-- Date stamp -->
+              <div class="messages-title"><b>Sunday, Feb 9</b> 12:58</div>
+
+              <!-- Sent message (by default - green and on right side) -->
+              <div class="message message-sent">
+                <div class="message-content">
+                  <!-- Bubble with text -->
+                  <div class="message-bubble">
+                    <div class="message-text">Hi, Kate</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Another sent message -->
+              <div class="message message-sent">
+                <div class="message-content">
+                  <div class="message-bubble">
+                    <div class="message-text">How are you?</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Received message (by default - grey on left side) -->
+              <div class="message message-with-avatar message-received">
+                <!-- Sender name -->
+                <div class="message-name">Kate</div>
+
+                <!-- Bubble with text -->
+                <div class="message-text">I am fine, thanks</div>
+
+                <!-- Sender avatar -->
+                <div style="background-image:url(https://picsum.photos/300)" class="message-avatar"></div>
+              </div>
+
+              <div class="message message-received">
+                <!-- Sender name -->
+                <div class="message-avatar" style="background-image:url(https://picsum.photos/300)"></div>
+                <div class="message-content">
+                  <!-- Sender name -->
+                  <div class="message-name">Blue Ninja</div>
+                  <!-- Bubble with text -->
+                  <div class="message-bubble">
+                    <div class="message-text">Hi there, I am also fine, thanks! And how are you?</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="cordova.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framework7/3.1.1/js/framework7.min.js"></script>
+    <script src="js/cordova-media-upload.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

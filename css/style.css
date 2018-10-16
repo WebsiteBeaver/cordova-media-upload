@@ -1,0 +1,33 @@
+.messagebar .toolbar-inner {
+	padding: 0px;
+}
+.messagebar-area {
+	margin-left: 0px;
+}
+#attachments {
+	font-size: 25px;
+	padding: 15px;
+}
+#send-btn {
+	font-size: 25px;
+	padding: 10px;
+	margin-left: 0px;
+}
+.play-video-icon {
+	position: absolute !important;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	font-size: 15vw;
+	z-index: 1;
+	color: #fff;
+	text-shadow: 2px 2px 5px rgb(160, 160, 160);
+}
+.message-image {
+	height: 200px;
+}
+.message-image img {
+	height: 100%;
+}
