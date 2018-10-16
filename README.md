@@ -30,7 +30,7 @@ Cordova wrapper class to help standardize getting photos, videos and audio from 
     * [.getVideo([newOptionsObj])](#CordovaMediaUpload+getVideo) ⇒ <code>promise</code>
     * [.captureAudio()](#CordovaMediaUpload+captureAudio) ⇒ <code>promise</code>
     * [.transcodeVideos(videoUris, [newOptionsObj])](#CordovaMediaUpload+transcodeVideos) ⇒ <code>promise</code>
-    * [.uploadFiles(serverURL, paramsObj, fileUris, [videoUriArrObj])](#CordovaMediaUpload+uploadFiles) ⇒ <code>promise</code>
+    * [.uploadFiles(serverUrl, paramsObj, fileUris, [videoUriArrObj])](#CordovaMediaUpload+uploadFiles) ⇒ <code>promise</code>
     * [.deleteFiles(fileUris)](#CordovaMediaUpload+deleteFiles) ⇒ <code>promise</code>
 
 <a name="new_CordovaMediaUpload_new"></a>
@@ -171,7 +171,7 @@ cmu.transcodeVideos()
 ```
 <a name="CordovaMediaUpload+uploadFiles"></a>
 
-### cordovaMediaUpload.uploadFiles(serverURL, paramsObj, fileUris, [videoUriArrObj]) ⇒ <code>promise</code>
+### cordovaMediaUpload.uploadFiles(serverUrl, paramsObj, fileUris, [videoUriArrObj]) ⇒ <code>promise</code>
 Upload files.
 
 **Kind**: instance method of [<code>CordovaMediaUpload</code>](#CordovaMediaUpload)  
@@ -180,7 +180,7 @@ Upload files.
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| serverURL | <code>string</code> |  | URL to upload files to. |
+| serverUrl | <code>string</code> |  | URL to upload files to. |
 | paramsObj | <code>object</code> |  | parameters to send to server. |
 | fileUris | <code>Array.&lt;string&gt;</code> \| <code>string</code> |  | Local video URIs to upload. |
 | [videoUriArrObj] | <code>object</code> | <code>{}</code> | The video and thumbnail URI array object |
@@ -189,9 +189,9 @@ Upload files.
 
 **Example**  
 ```js
-const uploadUrl = 'https://url-to-upload-files';
+const serverUrl = 'https://url-to-upload-files';
 const paramsObj = {}; //Parameters sent to server
-cmu.uploadFiles(uploadUrl, paramsObj, fileUris)
+cmu.uploadFiles(serverUrl, paramsObj, fileUris)
   .then(data => {})
   .catch(error => { if(error) console.log('error'); });
 ```
@@ -201,7 +201,7 @@ cmu.uploadFiles(uploadUrl, paramsObj, fileUris)
 Delete files.
 
 **Kind**: instance method of [<code>CordovaMediaUpload</code>](#CordovaMediaUpload)  
-**Fulfil**: <code>string</code> - Local file URIs.  
+**Fulfil**: - The file URI has been deleted.  
 **Reject**: <code>Error</code> - Rejected promise with message.  
 
 | Param | Type | Description |

@@ -377,7 +377,7 @@ class CordovaMediaUpload {
 	/**
 	 * Upload files.
 	 *
-	 * @param {string} serverURL - URL to upload files to.
+	 * @param {string} serverUrl - URL to upload files to.
 	 * @param {object} paramsObj - parameters to send to server.
 	 * @param {string[]|string} fileUris - Local video URIs to upload.
 	 * @param {object} [videoUriArrObj = {}] - The video and thumbnail URI array object
@@ -387,9 +387,9 @@ class CordovaMediaUpload {
 	 * @fulfil {object[]} - JSON data from server.
 	 * @reject {Error} - Fail to convert files to blobs.
 	 * @example
-	 * const uploadUrl = 'https://url-to-upload-files';
+	 * const serverUrl = 'https://url-to-upload-files';
 	 * const paramsObj = {}; //Parameters sent to server
-	 * cmu.uploadFiles(uploadUrl, paramsObj, fileUris)
+	 * cmu.uploadFiles(serverUrl, paramsObj, fileUris)
 	 *   .then(data => {})
 	 *   .catch(error => { if(error) console.log('error'); });
 	 */
@@ -439,7 +439,7 @@ class CordovaMediaUpload {
 	 *
 	 * @param {string[]|string} fileUris - Local video URI to transcode.
 	 * @returns {promise}
-	 * @fulfil {string} - Local file URIs.
+	 * @fulfil - The file URI has been deleted.
 	 * @reject {Error} - Rejected promise with message.
 	 * @example
 	 * cmu.deleteFiles(fileUris)
