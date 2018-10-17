@@ -15,7 +15,11 @@ cordova plugin add cordova-plugin-file
 cordova plugin add cordova-plugin-video-editor
 ```
 
-This is all you need if you're just using the Cordova Media Upload plugin, which can be found in [js/cordova-media-upload.js](js/cordova-media-upload.js). This entire repo is that plus a messaging demo you can try out on a blank Cordova project and uses Framework7. The demo also use the [Cordova Streaming Media](https://github.com/nchutchind/cordova-plugin-streaming-media) plugin to preview videos in the messaging system.
+This is all you need if you're just using the Cordova Media Upload class, which can be found in [js/cordova-media-upload.js](js/cordova-media-upload.js). This entire repo is that plus a messaging demo you can try out on a blank Cordova project and uses Framework7. The demo also use the [Cordova Streaming Media](https://github.com/nchutchind/cordova-plugin-streaming-media) plugin to preview videos in the messaging system. Again, this is not necessary if you're just using this class.
+
+```
+cordova plugin add cordova-plugin-streaming-media
+```
 
 <a name="CordovaMediaUpload"></a>
 
