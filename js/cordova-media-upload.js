@@ -206,7 +206,7 @@ class CordovaMediaUpload {
 			promiseArr.push(this.fileUriToBlobPromise(fileUri))
 		});
 
-		return await Promise.all(promiseArr);
+		return Promise.all(promiseArr);
 	}
 
 	/**
@@ -314,7 +314,7 @@ class CordovaMediaUpload {
 	 */
 	async captureVideo(newOptionsObj = {}) {
 		const [videoUri, optionsObj] = await this.getMedia(this.getOrSetOptions(newOptionsObj), 'VIDEO', 'CAMERA');
-		return await this.createVideoThumbnail(videoUri, optionsObj);
+		return this.createVideoThumbnail(videoUri, optionsObj);
 	}
 
 	/**
@@ -331,7 +331,7 @@ class CordovaMediaUpload {
 	 */
 	async getVideo(newOptionsObj = {}) {
 		const [videoUri, optionsObj] = await this.getMedia(this.getOrSetOptions(newOptionsObj), 'VIDEO', 'PHOTOLIBRARY');
-		return await this.createVideoThumbnail(videoUri, optionsObj);
+		return this.createVideoThumbnail(videoUri, optionsObj);
 	}
 
 	/**
@@ -371,7 +371,7 @@ class CordovaMediaUpload {
 			promiseArr.push(this.transcodeVideoPromise(videoUri, newOptionsObj));
 		});
 
-		return await Promise.all(promiseArr);
+		return Promise.all(promiseArr);
 	}
 
 	/**
@@ -379,7 +379,7 @@ class CordovaMediaUpload {
 	 *
 	 * @param {string} serverUrl - URL to upload files to.
 	 * @param {object} paramsObj - parameters to send to server.
-	 * @param {string[]|string} fileUris - Local video URIs to upload.
+	 * @param {string[]|string} fileUris - Local file URIs to upload.
 	 * @param {object} [videoUriArrObj = {}] - The video and thumbnail URI array object
 	 * @param {string[]} [videoUriArrObj.thumbs] - The video thumbnail URIs
 	 * @param {string[]} [videoUriArrObj.videos] - The video URIs
@@ -431,7 +431,7 @@ class CordovaMediaUpload {
 
 		const response = await fetch(serverURL, {method: 'post', body: formData});
 		if(!response.ok) throw new Error('Server error');
-		return await response.json();
+		return response.json();
 	}
 
 	/**
@@ -455,6 +455,6 @@ class CordovaMediaUpload {
 			promiseArr.push(this.deleteFilePromise(fileUri));
 		});
 
-		return await Promise.all(promiseArr);
+		return Promise.all(promiseArr);
 	}
 }
